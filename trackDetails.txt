@@ -3,5 +3,5 @@ js adv topics => async, await, promises, then catch, error handling , cro , call
 nodejs => terminal
 expressjs => framework (web browser), hbs
 mongodb => mongodb, mongoose (hbs)
-api=> express+mongo + middleware(auth, uploads), send emails, relations,.....
+api => express+mongo + middleware(auth, uploads), send emails, relations,.....
 angular 
