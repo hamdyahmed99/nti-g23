@@ -2,6 +2,8 @@
 const addUser = document.querySelector("#addUser") 
 const userWrap=document.querySelector("#userWrap")
 const singleUserWrap = document.querySelector("#singleUserWrap")
+const editUserForm = document.querySelector("#editUser")
+// console.log(editUserForm)
 //user details
 const userHeads = ["name", "age", "email"]
 //read from localstorage
@@ -27,6 +29,12 @@ const showUser = (user)=>{
     writeToStorage(user, "single")
     window.location.href = "single.html"
 }
+//editUserAction
+const editUserAction= (user, index)=>{
+    writeToStorage(index,"editId")
+    // writeToStorage(user,"editUser")
+    window.location.href = "edit.html"
+}
 //drawAllItems 
 const drawAll = (allUsers) =>{
     userWrap.innerHTML=""
@@ -38,7 +46,7 @@ const drawAll = (allUsers) =>{
         const showBtn = createMyOwnEle("button", td, "Show", "btn btn-primary mx-2")
         showBtn.addEventListener("click", ()=> showUser(user))
         const editBtn = createMyOwnEle("button", td, "edit", "btn btn-warning mx-2")
-        editBtn.addEventListener("click", ()=> {})
+        editBtn.addEventListener("click", ()=> editUserAction(user, index))
         const delBtn = createMyOwnEle("button", td, "delete", "btn btn-danger mx-2")
         delBtn.addEventListener("click", ()=> delUser(allUsers, index))
     })
@@ -64,9 +72,24 @@ if(userWrap){
 if(singleUserWrap){
     const userData = readFromStorage("single")
     singleUserWrap.innerHTML= `<div class="row">
-    <p class="col-6">Id: ${userData.id}</p>
-    <p class="col-6">Name: ${userData.name}</p>
-                <p class="col-6">Age: ${userData.age}</p>
-                <p class="col-6">Email: ${userData.email}</p>
-            </div> `
+        <p class="col-6">Id: ${userData.id}</p>
+        <p class="col-6">Name: ${userData.name}</p>
+        <p class="col-6">Age: ${userData.age}</p>
+        <p class="col-6">Email: ${userData.email}</p>
+    </div> `
+}
+
+if(editUserForm){
+    const allUsers = readFromStorage()
+    const userIndex = localStorage.getItem("editId")
+    const user = allUsers[userIndex]
+    userHeads.forEach(head=> editUserForm.elements[head].value = user[head])
+    editUserForm.addEventListener("submit", function(e){
+        e.preventDefault()
+        const user = { id: allUsers[userIndex].id}
+        userHeads.forEach(head=> user[head] = editUserForm.elements[head].value )
+        allUsers[userIndex] = user
+        writeToStorage(allUsers)
+        window.location.href="index.html"        
+    })
 }
