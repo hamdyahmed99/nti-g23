@@ -1,0 +1,10 @@
+many buttons
+table => 
+    thead=> tr=> many th
+    tbody => many tr => many td
+
+
+[
+    {name:"key1", data:["x","y", "z"]},
+    ........
+]
