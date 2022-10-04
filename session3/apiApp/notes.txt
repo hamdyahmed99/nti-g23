@@ -8,3 +8,11 @@ table =>
     {name:"key1", data:["x","y", "z"]},
     ........
 ]
+
+
+crud => create read update delete
+api 
+get => read
+post => create
+patch, put => update
+delete => delete
