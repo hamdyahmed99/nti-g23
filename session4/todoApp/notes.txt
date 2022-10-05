@@ -1,0 +1,19 @@
+file => users.json
+[
+    {title:"", content:"", id: dynamic}
+]
+jsonfiledeal {
+    read json data
+write json file
+}
+fs => read write ....
+=====================
+deal with todo
+{add
+show all
+show single
+edit
+delete}
+============
+index 
+npm init --y
