@@ -34,6 +34,7 @@ const apiRequest = async() =>{
 if(dataWrap) apiRequest()
 
 const add = document.querySelector("#add")
+
 const postData = async(data)=>{
     try{
         const d = await fetch(commonApiUrl, {

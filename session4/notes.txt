@@ -1,0 +1,12 @@
+- what is node js
+- run time enviroment
+- library =>  react, jquery, 
+  framework => angular, vue, bootstrap
+
+node(js with run time env) => expressjs
+
+modules (mini program (contain classes or functions ))
+
+build in
+our modules 
+npm 

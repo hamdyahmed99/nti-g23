@@ -9,7 +9,8 @@ write json file
 fs => read write ....
 =====================
 deal with todo
-{add
+{
+    add
 show all
 show single
 edit
@@ -17,3 +18,17 @@ delete}
 ============
 index 
 npm init --y
+
+
+add comment to task
+node index addComment 123  marwa hello  
+
+{
+    id:123,
+    title,
+    content,
+    comments :[
+       { name:marwa,
+        comment:hello}
+    ]
+}
