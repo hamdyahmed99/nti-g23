@@ -37,43 +37,34 @@
 // req.on('error' , (e)=> console.log(e))
 // req.end()
 // npm i pckg@ver
-const apiURL = "https://dummyjson.com/comments"
-const fetch = require("node-fetch")
-const myReq = async(url, callback)=>{
-    try{
-        const result = await (await fetch(url)).json()
-        callback(result, null)
-    }
-    catch(e){
-        callback(null, e.message)
-    }
-}
+// const apiURL = "https://dummyjson.com/comments"
+// const fetch = require("node-fetch")
+// const myReq = async(url, callback)=>{
+//     try{
+//         const result = await (await fetch(url)).json()
+//         callback(result, null)
+//     }
+//     catch(e){
+//         callback(null, e.message)
+//     }
+// }
 
 // myReq(apiURL, (res, err)=>{
 //     if(err) return console.log("fe error ", err)
 //     console.log(res)
 // })
 
-const yargs = require("yargs")
-yargs.command({
-    command:"api",
-    builder:{ 
-        url:{ demandOption:true, type:"string"}
-    },
-    handler: function(argv){
-        myReq(argv.url, (res, err)=>{
-            if(err) return console.log("fe error ", err)
-            console.log(res)
-        })
-    }
-})
-yargs.argv
-
-
-
-
-
-
-
-
-
+// const yargs = require("yargs")
+// yargs.command({
+//     command:"api",
+//     builder:{ 
+//         url:{ demandOption:true, type:"string"}
+//     },
+//     handler: function(argv){
+//         myReq(argv.url, (res, err)=>{
+//             if(err) return console.log("fe error ", err)
+//             console.log(res)
+//         })
+//     }
+// })
+// yargs.argv
