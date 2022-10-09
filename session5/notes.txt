@@ -1,0 +1,4 @@
+console.log(x)
+t()
+var x                               let
+function t                           const
