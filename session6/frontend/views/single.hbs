@@ -1,28 +1,24 @@
 {{>header}}
 {{>navbar}}
-  <a href="/add" class="btn btn-primary">
-  Add User
-  </a>
+  {{#if isFound}}
   <section class="row">
     <table class="table table-stripped">
       <thead>
         <tr>
-          <th>#</th>
-          <th>name</th>
-          <th>Actions</th>
+          <th>ID: {{userData.id}}</th>
+          <th>name: {{userData.name}}</th>
+        </tr>
+        <tr>
+          <th>Email: {{userData.email}}</th>
+          <th>Age: {{userData.age}}</th>
         </tr>
       </thead>
-      <tbody>
-        <tr>
-          <td>1</td>
-          <td>Marwa</td>
-          <td>
-            <a href="" class="btn btn-warning mx-2">Edit</a>
-            <a href="" class="btn btn-danger mx-2">Delete</a>
-          </td>
-        </tr>
-      </tbody>
     </table>
   </section>
+  {{else}}
+  <div class="alert alert-danger">
+    User Not Found
+  </div>
+  {{/if}}
 </div>
 {{>footer}}
