@@ -1,3 +1,5 @@
+//npm init --y
+// npm i express hbs dotenv
 const express = require("express")
 const hbs = require("hbs")
 const path = require("path")
@@ -7,24 +9,29 @@ const PORT = process.env.PORT || 3000
 const staticFiles = path.join(__dirname, "frontend/public")
 const viewsFiles = path.join(__dirname, "frontend/views")
 const layoutsFiles = path.join(__dirname, "frontend/layouts")
-app.use(express.urlencoded({extended:true}))
 app.use(express.static(staticFiles))
 app.set("view engine", "hbs")
 app.set("views", viewsFiles)
 hbs.registerPartials(layoutsFiles)
+<<<<<<< HEAD
 const userRoutes = require("./app/routes/user.routes")
 app.use(userRoutes)
 
+=======
+>>>>>>> parent of c03bc8e (s6)
 app.get("/", (req,res)=>{
     res.render("home", {
         pageTitle:"Home Page"
     })
+<<<<<<< HEAD
 
 })
 
 app.get("/addMethod",(req,res)=>{
     const user ={id:data.now(),...req .query}
     const allUser =deal.readfrom(JSON)
+=======
+>>>>>>> parent of c03bc8e (s6)
 })
 app.get("/add", (req,res)=>{
     res.render("add", {
@@ -46,5 +53,8 @@ app.get("/single", (req,res)=>{
 app.get("/delete", (req,res)=>{
     res.send("delete")
 })
->>>>>>> Stashed changes
+<<<<<<< HEAD
+// >>>>>>> Stashed changes
+=======
+>>>>>>> parent of c03bc8e (s6)
 app.listen(PORT, ()=>console.log(`http://localhost:${PORT}`))
