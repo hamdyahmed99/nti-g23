@@ -12,10 +12,9 @@ app.use(express.static(staticFiles))
 app.set("view engine", "hbs")
 app.set("views", viewsFiles)
 hbs.registerPartials(layoutsFiles)
-<<<<<<< Updated upstream
 const userRoutes = require("./app/routes/user.routes")
 app.use(userRoutes)
-=======
+
 app.get("/", (req,res)=>{
     res.render("home", {
         pageTitle:"Home Page"
