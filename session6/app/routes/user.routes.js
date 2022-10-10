@@ -1,0 +1,11 @@
+const router = require("express").Router()
+const userController = require("../controller/user.controller")
+router.get("/", userController.showAll)
+router.get("/add", userController.add)
+router.get("/addMethod",userController.addMethod)
+router.get("/addPost", userController.addPost)
+router.post("/addPostMethod", userController.addPostMethod)
+router.get("/edit",userController.edit)
+router.get("/single", userController.single)
+router.get("/delete", userController.del)
+module.exports = router
