@@ -14,9 +14,12 @@ app.set("view engine", "hbs")
 app.set("views", viewsFiles)
 hbs.registerPartials(layoutsFiles)
 <<<<<<< HEAD
+<<<<<<< HEAD
 const userRoutes = require("./app/routes/user.routes")
 app.use(userRoutes)
 
+=======
+>>>>>>> parent of c03bc8e (s6)
 =======
 >>>>>>> parent of c03bc8e (s6)
 app.get("/", (req,res)=>{
@@ -24,12 +27,15 @@ app.get("/", (req,res)=>{
         pageTitle:"Home Page"
     })
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 })
 
 app.get("/addMethod",(req,res)=>{
     const user ={id:data.now(),...req .query}
     const allUser =deal.readfrom(JSON)
+=======
+>>>>>>> parent of c03bc8e (s6)
 =======
 >>>>>>> parent of c03bc8e (s6)
 })
@@ -54,7 +60,10 @@ app.get("/delete", (req,res)=>{
     res.send("delete")
 })
 <<<<<<< HEAD
+<<<<<<< HEAD
 // >>>>>>> Stashed changes
+=======
+>>>>>>> parent of c03bc8e (s6)
 =======
 >>>>>>> parent of c03bc8e (s6)
 app.listen(PORT, ()=>console.log(`http://localhost:${PORT}`))
