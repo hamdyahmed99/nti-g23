@@ -1,0 +1,6 @@
+users=> name , email, age
+add
+edit
+delete
+show all
+show
