@@ -1,4 +1,5 @@
 const connect = require('../db/connect')
+const ObjectId= require("mongodb").ObjectId
 class User{
     static add = (req, res)=>{
         res.render("add", {pageTitle:"add New User"})
@@ -7,6 +8,7 @@ class User{
         connect(async(err, db)=>{
          if(err) res.render("err404", {pageTitle:"database error 1"})
           try{
+            req.body.status? req.body.status=true: req.body.status=false
             await db.collection("user").insertOne(req.body)
             res.redirect("/")
           }
@@ -33,6 +35,7 @@ class User{
              }
             })
     }
+
     static single = (req, res)=>{
         res.render("single")
     }
@@ -43,7 +46,16 @@ class User{
         res.render("addAddr")
     }
     static delUser = (req, res)=>{
-        res.send("delete")
+        connect(async(err, db)=>{
+            if(err) res.render("err404", {pageTitle:"database error 1"})
+             try{
+                const data = await db.collection("user").deleteOne({_id: new ObjectId(req.params.id)})
+                res.redirect("/")
+             }
+             catch(e){
+                res.send(e.message)
+             }
+            })
     }
     static delAddr = (req, res)=>{
         res.send("delAddr")
