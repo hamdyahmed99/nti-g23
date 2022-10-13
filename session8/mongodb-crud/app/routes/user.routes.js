@@ -1,7 +1,10 @@
 const router = require('express').Router()
 const User = require('../controllers/user.controller')
-router.get("/", User.index)
+
 router.get("/add", User.add)
+router.post("/add", User.addLogic)
+
+router.get("/", User.index)
 router.get("/user/:id", User.single)
 router.get("/edit/:id", User.edit)
 router.get("/addAddr/:userId", User.addAddr)

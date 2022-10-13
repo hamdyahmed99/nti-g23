@@ -9,14 +9,22 @@
         </tr>
     </thead>
     <tbody>
-        <tr class="text-center">
-            <td>1</td>
-            <td>Marwa</td>
-            <td><a href="/user/1" class="btn btn-primary">Show</a></td>
-            <td><a href="/edit/1" class="btn btn-warning">Edit</a></td>
-            <td><a href="/del/id" class="btn btn-danger">Delete</a></td>
-            <td><a href="/addAddr/id" class="btn btn-success">Add address</a></td>
+        {{#if isEmpty}}
+        <tr class="alert alert-danger">
+            <td colspan="6">No Users Yet</td>
         </tr>
+        {{else}}
+        {{#each data}}
+        <tr class="text-center">
+            <td>{{_id}}</td>
+            <td>{{fullName}}</td>
+            <td><a href="/user/{{_id}}" class="btn btn-primary">Show</a></td>
+            <td><a href="/edit/{{_id}}" class="btn btn-warning">Edit</a></td>
+            <td><a href="/del/{{_id}}" class="btn btn-danger">Delete</a></td>
+            <td><a href="/addAddr/{{_id}}" class="btn btn-success">Add address</a></td>
+        </tr>
+        {{/each}}
+        {{/if}}
     </tbody>
 </table>
 {{>footer}}
