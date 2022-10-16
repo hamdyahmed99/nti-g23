@@ -1,0 +1,64 @@
+customer => accNum, name, intial balance, operations=[] , remaining balance
+add customer
+add operation (add => {opType:"add", val:100}, withdraw)
+
+1000
+1100
+900
+
+
+store data + operations
+realtions between data
+
+
+sql   -   no sql 
+structured - no structured query language
+
+
+tables (fields => type) => rows (record)
+users 
+=>> id -> number, name, age, email, status, manager
+normalization
+
+1 ahmed 20 a@gmail.com 1   null
+2  mohmed 19  m@m.com 1    1
+
+users                         -  mangers
+1 ahmed 20 a@gmail.com 1      -   2      1
+2  mohmed 19  m@m.com 1       - 
+
+
+collection => documents
+[
+    {name:"marwa"},
+    {age:15}
+]
+
+
+users 
+    admin
+    students
+    parents
+    teachers
+
+name, phone, email, ...
+id name salary ispaid class subjects
+
+
+id name 
+1 marwa
+2 eman
+3 ahmed 
+4 mohammed
+
+students
+2 node  a  1
+2 php   b  0
+
+
+
+
+
+
+
+
