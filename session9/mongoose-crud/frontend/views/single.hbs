@@ -1,0 +1,32 @@
+{{>header}}
+{{>navbar}}
+<div class="row">
+    <p class="col-6">{{data._id}}</p>
+    <p class="col-6">{{data.fullName}}</p>
+    <p class="col-6">{{data.email}}</p>
+    <p class="col-6">{{data.age}}</p>
+    <p class="col-6">{{data.status}}</p>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>type</th>
+                <th>details</th>
+            </tr>
+        </thead>
+        <tbody>
+    {{#each data.addresses}}
+        <tr>
+            <td>{{_id}}</td>
+            <td>{{addrType}}</td>
+            <td>{{addrDetails}}</td>
+            <td>
+                <a href="/delAddr/{{_id}}" class="btn btn-danger">delete</a>
+            </td>
+        </tr>
+    {{/each}}
+        </tbody>
+    </table>
+
+</div>
+{{>footer}}

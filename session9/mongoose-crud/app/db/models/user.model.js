@@ -1,0 +1,39 @@
+const mongoose = require("mongoose")
+const User = mongoose.model("User", {
+    name:{
+        type:String,
+        required:true,
+        trim:true, 
+        minLength:3,
+        maxLength:20
+    },
+    email:{
+        type:String,
+        required:true,
+        trim:true, 
+        unique:true
+    },
+    age:{
+        type:Number,
+        min:21,
+        max:60,
+        required:true
+    },
+    status:{
+        type:Boolean,
+        default:false
+    },
+    addresses:[
+        {
+            addrType:{
+                type:String,
+                trim:true,         
+            },
+            addrDetails:{        
+                type:String,
+                trim:true, 
+        }
+        }
+    ]
+})
+module.exports = User 
