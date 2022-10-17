@@ -1,0 +1,9 @@
+users
+=> name, age, email, password, image, status, addresses
+--> register, show all, show single, edit, delete
+--> login , get profile, edit password, logout , add images, ...
+
+posts
+=> title, type=>[txt, file], content file
+if type==file =< file required
+else content required
